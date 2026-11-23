@@ -1,19 +1,26 @@
 /**
- * Charte graphique KWABO - Mobile App
- * Reprise fidèle de la maquette v3.0
+ * Charte graphique BeniLink - Mobile App
+ * Reprise fidèle de la maquette v3.0 / BeniLink
  */
 
 export const COLORS = {
-  // Verts de marque
-  green: '#1A5C3A',
-  greenDark: '#123F28',
-  greenHero: '#1A4D30',
-  greenMid: '#2D7A52',
-  greenPale: '#E8F5EE',
+  // Bleus de marque BeniLink (nouveau thème officiel)
+  primary: '#0B6FB8',
+  primaryDark: '#084D82',
+  primaryHero: '#0A5C9E',
+  primaryMid: '#1593D6',
+  primaryPale: '#E6F4FD',
 
-  // Or & Jaune
-  gold: '#D4A017',
-  goldLight: '#F5C842',
+  // Alias pour rétrocompatibilité avec les composants existants
+  green: '#0B6FB8',
+  greenDark: '#084D82',
+  greenHero: '#0A5C9E',
+  greenMid: '#1593D6',
+  greenPale: '#E6F4FD',
+
+  // Or & Jaune (Identité BeniLink)
+  gold: '#E0A410',
+  goldLight: '#F7C531',
   goldPale: '#FDF6E0',
   goldText: '#7A5A06',
 
@@ -23,28 +30,27 @@ export const COLORS = {
   terracottaPale: '#FDF0EA',
 
   // Neutres & Fonds
-  cream: '#F9F7F4',
+  cream: '#F5F9FD',
   white: '#FFFFFF',
-  text: '#1A1F1B',
-  textMid: '#404844',
-  muted: '#56635B',
-  border: '#E0E8E4',
-  neutralPale: '#EEF1EF',
+  text: '#10202E',
+  textMid: '#3A4A58',
+  muted: '#51606E',
+  border: '#D9E7F2',
+  neutralPale: '#EAF2F8',
   cardBg: '#FFFFFF',
   
   // Statuses
   statusPendingBg: '#FDF6E0',
   statusPendingText: '#7A5A06',
-  statusActiveBg: '#E8F5EE',
-  statusActiveText: '#1A5C3A',
-  statusDoneBg: '#EEF1EF',
-  statusDoneText: '#404844',
+  statusActiveBg: '#E6F4FD',
+  statusActiveText: '#0B6FB8',
+  statusDoneBg: '#EAF2F8',
+  statusDoneText: '#3A4A58',
   statusUrgentBg: '#FDF0EA',
   statusUrgentText: '#A8420F',
 };
 
 export const FONTS = {
-  // React Native utilise des noms de polices système par défaut
   displayBold: 'System',
   bodyRegular: 'System',
   bodyMedium: 'System',
@@ -71,25 +77,24 @@ export const RADIUS = {
 
 export const SHADOWS = {
   sm: {
-    shadowColor: '#1A5C3A',
+    shadowColor: '#084D82',
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.08,
     shadowRadius: 3,
     elevation: 2,
   },
   md: {
-    shadowColor: '#1A5C3A',
+    shadowColor: '#084D82',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.1,
     shadowRadius: 12,
     elevation: 4,
   },
   lg: {
-    shadowColor: '#1A5C3A',
+    shadowColor: '#084D82',
     shadowOffset: { width: 0, height: 8 },
     shadowOpacity: 0.16,
     shadowRadius: 20,
     elevation: 8,
   },
 };
-

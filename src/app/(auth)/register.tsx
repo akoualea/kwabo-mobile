@@ -70,7 +70,7 @@ export default function RegisterScreen() {
               </TouchableOpacity>
               <Text style={styles.headerTitle}>Créer un compte</Text>
               <Text style={styles.headerSubtitle}>
-                Rejoignez les membres de la diaspora qui font confiance à KWABO.
+                Rejoignez les membres de la diaspora qui font confiance à BeniLink.
               </Text>
             </SafeAreaView>
           </View>
@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
   },
   topHeader: {
     minHeight: 160,
-    backgroundColor: COLORS.greenHero,
+    backgroundColor: COLORS.primaryDark,
     position: 'relative',
     overflow: 'hidden',
   },
@@ -201,11 +201,11 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFill,
     width: '100%',
     height: '100%',
-    opacity: 0.85,
+    opacity: 1, // Pleine clarté, nette et lumineuse
   },
   headerBgOverlay: {
     ...StyleSheet.absoluteFill,
-    backgroundColor: 'rgba(0, 0, 0, 0.40)',
+    backgroundColor: 'rgba(8, 77, 130, 0.22)', // Filtre azur léger qui n'assombrit pas la photo
   },
   headerSafeContent: {
     paddingHorizontal: SPACING.xl,

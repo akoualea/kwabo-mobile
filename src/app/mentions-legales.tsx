@@ -26,7 +26,7 @@ export default function MentionsLegalesScreen() {
         <View style={styles.card}>
           <Text style={styles.sectionTitle}>Éditeur de l'application</Text>
           <Text style={styles.paragraph}>
-            <Text style={{ fontWeight: '700' }}>KWABO SAS</Text>{'\n'}
+            <Text style={{ fontWeight: '700' }}>BeniLink SAS</Text>{'\n'}
             Société par actions simplifiée{'\n'}
             Siège social : Haie Vive, Cotonou, République du Bénin{'\n'}
             RCCM : RB/COT/24-B-0000{'\n'}
@@ -36,8 +36,8 @@ export default function MentionsLegalesScreen() {
           <Text style={styles.sectionTitle}>Contact officiel</Text>
           <Text style={styles.paragraph}>
             Téléphone / WhatsApp : +229 01 66 73 02 74{'\n'}
-            E-mail : contact@kwabo.bj{'\n'}
-            Site web : www.kwabo.bj
+            E-mail : contact@benilink.bj{'\n'}
+            Site web : www.benilink.bj
           </Text>
 
           <Text style={styles.sectionTitle}>Hébergement & Infrastructure</Text>
@@ -47,7 +47,7 @@ export default function MentionsLegalesScreen() {
 
           <Text style={styles.sectionTitle}>Propriété intellectuelle</Text>
           <Text style={styles.paragraph}>
-            L'ensemble des éléments constituant l'application KWABO (marques, logos, graphismes, logiciels, interfaces, photographies) sont protégés par le droit de la propriété intellectuelle et demeurent la propriété exclusive de KWABO SAS.
+            L'ensemble des éléments constituant l'application BeniLink (marques, logos, graphismes, logiciels, interfaces, photographies) sont protégés par le droit de la propriété intellectuelle et demeurent la propriété exclusive de BeniLink SAS.
           </Text>
         </View>
       </ScrollView>

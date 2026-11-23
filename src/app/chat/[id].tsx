@@ -105,8 +105,8 @@ export default function ChatScreen() {
       type: docType,
       date: "Aujourd'hui",
       size: fileSize || (isVid ? '24.5 Mo' : isPdf ? '320 Ko' : '1.2 Mo'),
-      reference: request?.tracking || 'KW-CHAT-2026',
-      serviceTitle: request?.title || 'Mission KWABO Bénin',
+      reference: request?.tracking || 'BL-CHAT-2026',
+      serviceTitle: request?.title || 'Mission BeniLink Bénin',
     });
   };
 

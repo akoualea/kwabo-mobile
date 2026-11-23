@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     marginLeft: SPACING.sm,
   },
   headerBellBtn: {
-    backgroundColor: 'rgba(30, 58, 47, 0.08)',
+    backgroundColor: 'rgba(8, 77, 130, 0.08)',
     width: 38,
     height: 38,
     borderRadius: 19,

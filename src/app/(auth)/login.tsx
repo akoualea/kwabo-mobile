@@ -48,7 +48,7 @@ export default function LoginScreen() {
           bounces={false}
           showsVerticalScrollIndicator={false}
         >
-          {/* HAUT : PHOTO D'ABOMEY EN FOND + LOGO KWABO */}
+          {/* HAUT : PHOTO EN FOND HAUTE CLARTÉ + LOGO BENILINK */}
           <View style={styles.authTop}>
             <Image
               source={PHOTOS['abomey']}
@@ -60,10 +60,10 @@ export default function LoginScreen() {
             <SafeAreaView edges={['top']} style={styles.safeTopContent}>
               <View style={styles.logoRow}>
                 <View style={styles.logoBadge}>
-                  <Text style={styles.logoBadgeText}>K</Text>
+                  <Text style={styles.logoBadgeText}>B</Text>
                 </View>
                 <Text style={styles.logoTitle}>
-                  KWABO<Text style={styles.logoDot}>.</Text>
+                  BENILINK<Text style={styles.logoDot}>.</Text>
                 </Text>
               </View>
               <Text style={styles.tagline}>
@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
   },
   authTop: {
     minHeight: 160,
-    backgroundColor: COLORS.greenHero,
+    backgroundColor: COLORS.primaryDark,
     position: 'relative',
     overflow: 'hidden',
   },
@@ -182,11 +182,11 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFill,
     width: '100%',
     height: '100%',
-    opacity: 0.85,
+    opacity: 1, // Pleine clarté pour une image bien nette et visible
   },
   bgOverlay: {
     ...StyleSheet.absoluteFill,
-    backgroundColor: 'rgba(0, 0, 0, 0.40)',
+    backgroundColor: 'rgba(8, 77, 130, 0.22)', // Léger filtre azur pour garder le contraste sans obscurcir la photo
   },
   safeTopContent: {
     paddingHorizontal: 20,

@@ -26,7 +26,7 @@ export default function ConfidentialiteScreen() {
         <View style={styles.noticeBox}>
           <Ionicons name="shield-checkmark-outline" size={20} color={COLORS.green} />
           <Text style={styles.noticeText}>
-            KWABO s'engage à garantir la confidentialité et la sécurité des données de la diaspora et de leurs proches au Bénin.
+            BeniLink s'engage à garantir la confidentialité et la sécurité des données de la diaspora et de leurs proches au Bénin.
           </Text>
         </View>
 
@@ -43,7 +43,7 @@ export default function ConfidentialiteScreen() {
 
           <Text style={styles.sectionTitle}>Paiements & Données bancaires</Text>
           <Text style={styles.paragraph}>
-            Aucune coordonnée de carte bancaire n'est conservée ni enregistrée par KWABO. Tous les règlements sont exécutés et sécurisés par nos prestataires agréés conformes aux normes PCI-DSS (Stripe, Mobile Money MTN et Moov Bénin).
+            Aucune coordonnée de carte bancaire n'est conservée ni enregistrée par BeniLink. Tous les règlements sont exécutés et sécurisés par nos prestataires agréés conformes aux normes PCI-DSS (Stripe, Mobile Money MTN et Moov Bénin).
           </Text>
 
           <Text style={styles.sectionTitle}>Vos droits</Text>

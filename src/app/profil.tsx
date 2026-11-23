@@ -21,7 +21,7 @@ export default function ProfilScreen() {
 
   const [firstName, setFirstName] = useState(user?.firstName || 'Aïcha');
   const [lastName, setLastName] = useState(user?.lastName || 'Sossa');
-  const [email, setEmail] = useState(user?.email || 'client@kwabo.demo');
+  const [email, setEmail] = useState(user?.email || 'client@benilink.demo');
   const [phone, setPhone] = useState(user?.phone || '+33 6 12 34 56 78');
   const [country, setCountry] = useState(user?.country || 'France');
 

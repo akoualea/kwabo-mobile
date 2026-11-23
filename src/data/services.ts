@@ -15,6 +15,7 @@ export interface ServiceItem {
   icon: string;
   popular?: boolean;
   price: string;
+  delay?: string;
   short: string;
   included: string[];
   fields: FormField[];
@@ -27,7 +28,8 @@ export const SERVICES: ServiceItem[] = [
     name: 'Suivi de chantier',
     icon: 'business',
     popular: true,
-    price: '120-200 €/mois',
+    price: 'Sur devis',
+    delay: 'Première visite sous 7 jours',
     short: 'Visite hebdo, vidéo 360°, contrôle matériaux, rapport écrit.',
     included: [
       'Visite hebdomadaire du chantier',
@@ -38,7 +40,8 @@ export const SERVICES: ServiceItem[] = [
     fields: [
       { name: 'adresse', label: 'Adresse exacte du chantier', required: true, placeholder: 'Ex: Fidjrossè Calvaire, Cotonou' },
       { name: 'gps', label: 'Coordonnées GPS (si disponibles)', placeholder: '6.3703, 2.3912' },
-      { name: 'macon', label: 'Nom et contact du maçon / chef chantier', placeholder: 'Nom, +229…' },
+      { name: 'maconNom', label: 'Nom du maçon (facultatif)', type: 'text', placeholder: 'Ex: M. Zannou' },
+      { name: 'maconContact', label: 'Contact du maçon (facultatif)', type: 'tel', placeholder: '+229 01...' },
       {
         name: 'stade',
         label: "Stade d'avancement actuel",
@@ -54,7 +57,8 @@ export const SERVICES: ServiceItem[] = [
     name: 'Investissement immobilier',
     icon: 'home',
     popular: true,
-    price: 'Dès 300 €/dossier',
+    price: 'Sur devis',
+    delay: 'Étude sous 10 jours ouvrés',
     short: 'Recherche de biens, visite et expertise, gestion locative.',
     included: ['Recherche de biens vérifiés', 'Visite et rapport d\'expertise', 'Gestion locative sécurisée'],
     fields: [
@@ -78,7 +82,8 @@ export const SERVICES: ServiceItem[] = [
     cat: 'immobilier',
     name: 'Accompagnement foncier',
     icon: 'location',
-    price: 'Dès 500 €',
+    price: 'Sur devis',
+    delay: 'Audit sous 15 jours ouvrés',
     short: 'Vérification de titre ANDF, notaire, état des lieux GPS.',
     included: [
       'Vérification du titre auprès de l\'ANDF',
@@ -101,7 +106,8 @@ export const SERVICES: ServiceItem[] = [
     cat: 'famille',
     name: 'Soutien famille quotidien',
     icon: 'hand-left',
-    price: '15-45 €/mois',
+    price: 'Sur devis',
+    delay: 'Prise en charge sous 48h',
     short: 'Factures SBEE/SONEB, recharge, courses, visite aux parents.',
     included: [
       'Paiement direct des factures SBEE et SONEB',
@@ -126,7 +132,8 @@ export const SERVICES: ServiceItem[] = [
     name: 'Santé de vos proches',
     icon: 'heart',
     popular: true,
-    price: 'Dès 25 €/mois',
+    price: 'Sur devis',
+    delay: 'Prise en charge sous 24h ouvrées',
     short: "Paiement de l'hôpital, livraison de médicaments, mutuelle.",
     included: [
       'Paiement direct aux hôpitaux et cliniques',
@@ -145,11 +152,12 @@ export const SERVICES: ServiceItem[] = [
     cat: 'famille',
     name: 'Événements à distance',
     icon: 'calendar',
-    price: 'Dès 300 €',
+    price: 'Sur devis',
+    delay: 'Planification sous 7 jours',
     short: 'Mariage, baptême, funérailles, dot, avec diffusion en direct.',
     included: [
       'Coordination logistique (mariage, baptême, funérailles, dot)',
-      'Présence d\'un représentant KWABO',
+      'Présence d\'un représentant BeniLink',
       'Diffusion vidéo privée en direct',
     ],
     fields: [
@@ -169,7 +177,8 @@ export const SERVICES: ServiceItem[] = [
     name: 'Faire venir un proche',
     icon: 'airplane',
     popular: true,
-    price: 'Dès 200 €/dossier',
+    price: 'Sur devis',
+    delay: 'Étude de recevabilité sous 72h',
     short: 'Dossier visa complet, invitation, inscription école ou fac.',
     included: ['Constitution du dossier de visa complet', 'Lettre d\'invitation et garanties', 'Inscription école ou université'],
     fields: [
@@ -189,7 +198,8 @@ export const SERVICES: ServiceItem[] = [
     name: 'Assistance administrative',
     icon: 'document',
     popular: true,
-    price: 'Dès 50 €/dossier',
+    price: 'Sur devis',
+    delay: 'Délai moyen 10 à 15 jours',
     short: 'Actes de naissance, passeport, casier judiciaire, légalisations.',
     included: ['Retrait et légalisation d\'actes civils', 'Suivi de dossier passeport biométrique', 'Casier judiciaire béninois'],
     fields: [
@@ -199,11 +209,36 @@ export const SERVICES: ServiceItem[] = [
     ],
   },
   {
+    id: 'comptabilite',
+    cat: 'demarches',
+    name: 'Comptabilité & Entreprise',
+    icon: 'calculator',
+    price: 'Sur devis',
+    delay: 'Sous 5 jours ouvrés',
+    short: 'Gestion fiscale, déclarations et bilan pour votre activité locale.',
+    included: [
+      'Tenue de comptabilité locale conforme OHADA',
+      'Déclarations fiscales et sociales au Bénin',
+      'Conseil et accompagnement de gestion',
+    ],
+    fields: [
+      { name: 'activite', label: 'Type d\'activité / entreprise', required: true, placeholder: 'Commerce, BTP, services...' },
+      {
+        name: 'regime',
+        label: 'Régime fiscal (si connu)',
+        type: 'select',
+        options: ['TPS', 'Régime réel simplifié', 'Régime réel normal', 'À déterminer'],
+      },
+      { name: 'localisation', label: 'Ville du siège social', placeholder: 'Cotonou, Calavi...' },
+    ],
+  },
+  {
     id: 'fret',
     cat: 'logistique',
     name: 'Fret et expédition de colis',
     icon: 'cube',
     price: 'Sur devis',
+    delay: 'Enlèvement sous 48h',
     short: 'Envoi sécurisé Europe/Amériques vers Bénin et retour.',
     included: ['Réception en entrepôt', 'Dédouanement et suivi en temps réel', 'Livraison à domicile au Bénin'],
     fields: [
@@ -217,5 +252,55 @@ export const SERVICES: ServiceItem[] = [
       },
     ],
   },
+  {
+    id: 'transfert',
+    cat: 'logistique',
+    name: "Transfert d'argent optimisé",
+    icon: 'cash',
+    popular: true,
+    price: 'Sur devis',
+    delay: 'Instantané ou sous 24h',
+    short: 'Transferts d\'argent sécurisés au meilleur taux vers le Bénin.',
+    included: [
+      'Taux de change avantageux garanti',
+      'Réception directe sur Mobile Money ou en agence',
+      'Traçabilité complète et reçu officiel',
+    ],
+    fields: [
+      { name: 'montant', label: 'Montant à transférer (€)', type: 'number', required: true, placeholder: '500' },
+      {
+        name: 'modeReception',
+        label: 'Mode de réception souhaité',
+        type: 'select',
+        options: ['MTN Mobile Money', 'Moov Money', 'Celtiis Cash', 'Retrait bancaire / espèces'],
+      },
+      { name: 'beneficiaireNom', label: 'Nom complet du bénéficiaire', required: true, placeholder: 'Nom et prénom' },
+      { name: 'beneficiaireTel', label: 'Numéro du bénéficiaire', type: 'tel', required: true, placeholder: '+229 01...' },
+    ],
+  },
+  {
+    id: 'cadeaux',
+    cat: 'logistique',
+    name: 'Cadeaux & produits locaux',
+    icon: 'gift',
+    price: 'Sur devis',
+    delay: 'Livraison sous 48h',
+    short: 'Paniers garnis, fleurs et produits artisanaux livrés à vos proches.',
+    included: [
+      'Sélection de produits locaux béninois de qualité',
+      'Emballage soigné et mot personnalisé',
+      'Remise en main propre avec photo de livraison',
+    ],
+    fields: [
+      {
+        name: 'typeCadeau',
+        label: 'Type de cadeau souhaité',
+        type: 'select',
+        options: ['Panier gourmand local', 'Fleurs & mot doux', 'Tissu wax & artisanat', 'Autre attention'],
+      },
+      { name: 'destinataire', label: 'Nom du destinataire', required: true, placeholder: 'Nom complet du destinataire' },
+      { name: 'adresseLivraison', label: 'Adresse de livraison', required: true, placeholder: 'Quartier, ville, repère précis' },
+      { name: 'contactDestinataire', label: 'Contact du destinataire', type: 'tel', required: true, placeholder: '+229 01...' },
+    ],
+  },
 ];
-

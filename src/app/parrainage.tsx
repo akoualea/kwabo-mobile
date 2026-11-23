@@ -22,7 +22,7 @@ export default function ParrainageScreen() {
   const handleShare = async () => {
     try {
       await Share.share({
-        message: `Rejoins KWABO pour toutes tes démarches et chantiers au Bénin ! Utilise mon code ${referralCode} pour bénéficier de 30 € offerts sur ta première mission. https://kwabo.bj`,
+        message: `Rejoins BeniLink pour toutes tes démarches et chantiers au Bénin ! Utilise mon code ${referralCode} pour bénéficier de 30 € offerts sur ta première mission. https://benilink.bj`,
       });
     } catch {
       Alert.alert('Partage', `Votre code de parrainage est : ${referralCode}`);
@@ -37,7 +37,7 @@ export default function ParrainageScreen() {
     <SafeAreaView style={styles.safeContainer} edges={['top']}>
       <Header
         title="Parrainage"
-        subtitle="Partagez la confiance KWABO"
+        subtitle="Partagez la confiance BeniLink"
         showBack
       />
 

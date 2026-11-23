@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "frontkwaboMobile",
-    "slug": "frontkwaboMobile",
-    "scheme": "kwabo",
+    "name": "BeniLink",
+    "slug": "benilink-mobile",
+    "scheme": "benilink",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

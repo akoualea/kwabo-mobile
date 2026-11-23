@@ -23,10 +23,10 @@ export default function IndexScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.logoBadge}>
-        <Text style={styles.logoK}>K</Text>
+        <Text style={styles.logoK}>B</Text>
       </View>
       <Text style={styles.brandTitle}>
-        KWABO<Text style={styles.brandDot}>.</Text>
+        BENILINK<Text style={styles.brandDot}>.</Text>
       </Text>
       <Text style={styles.tagline}>Votre présence de confiance au Bénin</Text>
       <ActivityIndicator color={COLORS.goldLight} style={{ marginTop: 24 }} />

@@ -24,7 +24,7 @@ export default function CompteScreen() {
 
   const handleOpenWhatsApp = async () => {
     const cleanNumber = WHATSAPP_CONTACT.replace(/[^0-9]/g, '');
-    const message = encodeURIComponent("Bonjour KWABO, j'ai une question concernant mon compte.");
+    const message = encodeURIComponent("Bonjour BeniLink, j'ai une question concernant mon compte.");
     const appUrl = `whatsapp://send?phone=${cleanNumber}&text=${message}`;
     const webUrl = `https://wa.me/${cleanNumber}?text=${message}`;
 
@@ -36,7 +36,7 @@ export default function CompteScreen() {
         await Linking.openURL(webUrl);
       }
     } catch {
-      Alert.alert('Contact WhatsApp', `Équipe KWABO : ${WHATSAPP_CONTACT}`);
+      Alert.alert('Contact WhatsApp', `Équipe BeniLink : ${WHATSAPP_CONTACT}`);
     }
   };
 
@@ -60,7 +60,7 @@ export default function CompteScreen() {
 
   return (
     <SafeAreaView style={styles.safeContainer} edges={['top']}>
-      <Header title="Mon compte" subtitle="Espace personnel KWABO" />
+      <Header title="Mon compte" subtitle="Espace personnel BeniLink" />
 
       <ScrollView
         contentContainerStyle={styles.scrollContent}
@@ -83,7 +83,7 @@ export default function CompteScreen() {
                 {user ? `${user.firstName} ${user.lastName}` : 'Aïcha Sossa'}
               </Text>
               <Text style={styles.profileEmail}>
-                {user?.email || 'client@kwabo.demo'}
+                {user?.email || 'client@benilink.demo'}
               </Text>
             </View>
             <Ionicons name="chevron-forward" size={20} color={COLORS.muted} />

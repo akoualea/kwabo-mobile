@@ -70,7 +70,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       tracking: newTracking,
       createdAt: "À l'instant",
       history: [
-        { at: "À l'instant", text: 'Demande enregistrée sur KWABO' },
+        { at: "À l'instant", text: 'Demande enregistrée sur BeniLink' },
       ],
     };
     setRequests((prev) => [newReq, ...prev]);

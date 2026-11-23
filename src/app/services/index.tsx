@@ -112,7 +112,15 @@ export default function ServicesCatalogScreen() {
                     <View style={styles.titleRow}>
                       <Text style={styles.serviceTitle}>{srv.name}</Text>
                     </View>
-                    <Text style={styles.priceTag}>{srv.price}</Text>
+                    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6, flexWrap: 'wrap', marginTop: 4 }}>
+                      <Text style={styles.priceTag}>{srv.price}</Text>
+                      {srv.delay && (
+                        <View style={styles.delayBadge}>
+                          <Ionicons name="time-outline" size={11} color={COLORS.goldText} />
+                          <Text style={styles.delayText}>{srv.delay}</Text>
+                        </View>
+                      )}
+                    </View>
                   </View>
                 </View>
 
@@ -242,7 +250,20 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: '700',
     color: COLORS.green,
-    marginTop: 2,
+  },
+  delayBadge: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 3,
+    backgroundColor: COLORS.goldPale,
+    paddingHorizontal: 7,
+    paddingVertical: 2,
+    borderRadius: RADIUS.pill,
+  },
+  delayText: {
+    fontSize: 10,
+    fontWeight: '700',
+    color: COLORS.goldText,
   },
   serviceDesc: {
     fontSize: 13,

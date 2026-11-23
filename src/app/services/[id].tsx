@@ -44,7 +44,15 @@ export default function ServiceDetailScreen() {
           <View style={styles.heroImgOverlay} />
           <View style={styles.heroCardInfo}>
             <Text style={styles.serviceName}>{service.name}</Text>
-            <Text style={styles.servicePrice}>{service.price}</Text>
+            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 4 }}>
+              <Text style={styles.servicePrice}>{service.price}</Text>
+              {service.delay && (
+                <View style={styles.delayBadge}>
+                  <Ionicons name="time-outline" size={12} color={COLORS.goldText} />
+                  <Text style={styles.delayText}>{service.delay}</Text>
+                </View>
+              )}
+            </View>
             <Text style={styles.serviceShort}>{service.short}</Text>
           </View>
         </View>
@@ -62,13 +70,13 @@ export default function ServiceDetailScreen() {
           </View>
         </View>
 
-        {/* GARANTIE KWABO */}
+        {/* GARANTIE BENILINK */}
         <View style={styles.guaranteeCard}>
           <View style={styles.guaranteeIcon}>
             <Ionicons name="shield-checkmark" size={24} color={COLORS.goldText} />
           </View>
           <View style={styles.guaranteeInfo}>
-            <Text style={styles.guaranteeTitle}>Garantie Confiance KWABO</Text>
+            <Text style={styles.guaranteeTitle}>Garantie Confiance BeniLink</Text>
             <Text style={styles.guaranteeDesc}>
               Intervenants vérifiés sur le terrain au Bénin, photos et vidéos horodatées, devis transparent sans frais cachés.
             </Text>
@@ -153,13 +161,26 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '700',
     color: COLORS.goldLight,
-    marginTop: 4,
-    marginBottom: 6,
+  },
+  delayBadge: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+    backgroundColor: COLORS.goldPale,
+    paddingHorizontal: 8,
+    paddingVertical: 3,
+    borderRadius: RADIUS.pill,
+  },
+  delayText: {
+    fontSize: 11,
+    fontWeight: '700',
+    color: COLORS.goldText,
   },
   serviceShort: {
     fontSize: 13,
     color: '#DCEBE2',
     lineHeight: 18,
+    marginTop: 6,
   },
   card: {
     backgroundColor: '#FFFFFF',

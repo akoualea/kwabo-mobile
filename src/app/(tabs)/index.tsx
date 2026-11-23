@@ -39,10 +39,10 @@ export default function HomeScreen() {
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
       >
-        {/* HEADER HERO AVEC PHOTO DE FOND (Chantier / Ganvié) */}
+        {/* HEADER HERO AVEC PHOTO DE FOND (Ganvié / Chantier haute netteté) */}
         <View style={styles.hero}>
           <Image
-            source={PHOTOS['chantier']}
+            source={PHOTOS['ganvie']}
             style={styles.heroBgPhoto}
             resizeMode="cover"
           />
@@ -370,7 +370,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
   },
   hero: {
-    backgroundColor: '#0C1F15',
+    backgroundColor: COLORS.primaryDark,
     position: 'relative',
     overflow: 'hidden',
     borderBottomLeftRadius: 24,
@@ -381,11 +381,11 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFill,
     width: '100%',
     height: '100%',
-    opacity: 0.85,
+    opacity: 1, // Pleine clarté, nette et lumineuse
   },
   heroOverlay: {
     ...StyleSheet.absoluteFill,
-    backgroundColor: 'rgba(12, 31, 21, 0.35)',
+    backgroundColor: 'rgba(8, 77, 130, 0.20)', // Voile ultra-léger pour préserver la lisibilité sans assombrir la photo
   },
   heroContent: {
     paddingHorizontal: 16,

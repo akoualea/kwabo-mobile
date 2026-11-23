@@ -63,13 +63,13 @@ export default function OnboardingScreen() {
         />
 
         <SafeAreaView edges={['top']} style={styles.topSafeArea}>
-          {/* Logo KWABO discret en haut à gauche */}
+          {/* Logo BeniLink discret en haut à gauche */}
           <View style={styles.logoRow}>
             <View style={styles.logoCircle}>
-              <Text style={styles.logoCircleText}>K</Text>
+              <Text style={styles.logoCircleText}>B</Text>
             </View>
             <Text style={styles.logoText}>
-              KWABO<Text style={styles.logoDot}>.</Text>
+              BENILINK<Text style={styles.logoDot}>.</Text>
             </Text>
           </View>
         </SafeAreaView>

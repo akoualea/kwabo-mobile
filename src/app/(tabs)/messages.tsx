@@ -35,7 +35,7 @@ export default function MessagesScreen() {
         <View style={styles.noticeBox}>
           <Ionicons name="shield-checkmark" size={18} color={COLORS.green} />
           <Text style={styles.noticeText}>
-            Toutes les communications et confirmations de mission sont enregistrées et sécurisées sur votre espace KWABO.
+            Toutes les communications et confirmations de mission sont enregistrées et sécurisées sur votre espace BeniLink.
           </Text>
         </View>
 

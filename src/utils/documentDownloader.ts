@@ -32,7 +32,7 @@ export function generateKwaboHtml(doc: DocumentDownloadData): string {
       : doc.type === 'receipt'
       ? "REÇU OFFICIEL DE DÉPENSES"
       : doc.type === 'invoice'
-      ? 'FACTURE DÉTAILLÉE KWABO'
+      ? 'FACTURE DÉTAILLÉE BENILINK'
       : 'DOCUMENT OFFICIEL CERTIFIÉ';
 
   return `
@@ -202,14 +202,14 @@ export function generateKwaboHtml(doc: DocumentDownloadData): string {
 <body>
   <div class="header">
     <div class="logo-box">
-      <div class="logo-badge">K</div>
-      <div class="brand-name">KWABO<span class="brand-dot">.</span></div>
+      <div class="logo-badge">B</div>
+      <div class="brand-name">BENILINK<span class="brand-dot">.</span></div>
     </div>
     <div class="company-meta">
-      <strong>KWABO SAS Bénin</strong><br>
+      <strong>BeniLink SAS Bénin</strong><br>
       Haie Vive, Cotonou, Bénin<br>
       Tél / WhatsApp : +229 01 66 73 02 74<br>
-      contact@kwabo.bj · www.kwabo.bj
+      contact@benilink.bj · www.benilink.bj
     </div>
   </div>
 
@@ -248,7 +248,7 @@ export function generateKwaboHtml(doc: DocumentDownloadData): string {
       <tbody>
         <tr>
           <td>Vérification physique sur site</td>
-          <td>Présence effective de l'agent KWABO à Cotonou avec horodatage GPS</td>
+          <td>Présence effective de l'agent BeniLink à Cotonou avec horodatage GPS</td>
           <td><strong>CONFORME</strong></td>
         </tr>
         <tr>
@@ -266,7 +266,7 @@ export function generateKwaboHtml(doc: DocumentDownloadData): string {
             ? `
         <tr>
           <td>Montant total certifié</td>
-          <td>Règlement sécurisé traité par KWABO</td>
+          <td>Règlement sécurisé traité par BeniLink</td>
           <td><strong>${doc.amount}</strong></td>
         </tr>`
             : ''
@@ -277,19 +277,19 @@ export function generateKwaboHtml(doc: DocumentDownloadData): string {
 
   <div class="stamp-box">
     <div class="stamp">
-      ★ KWABO BÉNIN SERVICE CLIENT ★<br>
+      ★ BENILINK BÉNIN SERVICE CLIENT ★<br>
       DOCUMENT OFFICIEL CONFORME<br>
       SIGNÉ NUMÉRIQUEMENT LE ${date}
     </div>
     <div class="signatures">
-      <strong>Le Responsable des Opérations KWABO</strong><br>
+      <strong>Le Responsable des Opérations BeniLink</strong><br>
       Direction des Missions Terrain - Cotonou<br>
       <span class="signature-line"></span>
     </div>
   </div>
 
   <div class="footer">
-    Ce document est une attestation certifiée générée par la plateforme KWABO Mobile.<br>
+    Ce document est une attestation certifiée générée par la plateforme BeniLink Mobile.<br>
     Identifiant unique de traçabilité : SHA256-${ref}-VERIFIED.
   </div>
 </body>
@@ -330,7 +330,7 @@ export async function downloadPdfDocument(
     });
 
     // Android FileProvider exige que le fichier se trouve dans cacheDirectory ou documentDirectory
-    const rawName = (doc.name || 'document_kwabo')
+    const rawName = (doc.name || 'document_benilink')
       .replace(/[^a-zA-Z0-9_\-\.]/g, '_')
       .toLowerCase();
     const finalFilename = rawName.endsWith('.pdf') ? rawName : `${rawName}.pdf`;
@@ -367,7 +367,7 @@ export async function downloadPdfDocument(
     }
   } catch (error: any) {
     Alert.alert(
-      'Document KWABO',
+      'Document BeniLink',
       `Le fichier "${doc.name}" a été généré avec succès dans votre espace.`
     );
     return { success: true };
@@ -375,7 +375,7 @@ export async function downloadPdfDocument(
 }
 
 /**
- * Télécharge ou partage une vidéo ou un média 360° certifié KWABO.
+ * Télécharge ou partage une vidéo ou un média 360° certifié BeniLink.
  */
 export async function downloadMediaFile(
   doc: DocumentDownloadData,
@@ -392,22 +392,22 @@ export async function downloadMediaFile(
   <meta charset="utf-8">
   <title>${doc.name}</title>
   <style>
-    body { font-family: sans-serif; text-align: center; padding: 40px; color: #1A5C3A; }
+    body { font-family: sans-serif; text-align: center; padding: 40px; color: #084D82; }
     h1 { margin-bottom: 8px; }
     p { color: #666; font-size: 14px; }
-    .badge { background: #D4A017; color: #1A5C3A; padding: 6px 14px; border-radius: 20px; font-weight: bold; }
-    .meta { margin-top: 24px; padding: 16px; background: #F9F7F4; border-radius: 12px; }
+    .badge { background: #E0A410; color: #084D82; padding: 6px 14px; border-radius: 20px; font-weight: bold; }
+    .meta { margin-top: 24px; padding: 16px; background: #F5F9FD; border-radius: 12px; }
   </style>
 </head>
 <body>
-  <span class="badge">MÉDIA OFFICIEL HORODATÉ KWABO</span>
+  <span class="badge">MÉDIA OFFICIEL HORODATÉ BENILINK</span>
   <h1>${doc.name}</h1>
   <p>Enregistrement certifié sur le terrain à Cotonou, Bénin</p>
   <div class="meta">
     <p><strong>Date de capture :</strong> ${doc.date || '24/09/2026'}</p>
     <p><strong>Résolution :</strong> Haute Définition 1080p 360°</p>
     <p><strong>Taille du fichier :</strong> ${doc.size || '24.5 Mo'}</p>
-    <p><strong>Identifiant :</strong> KW-VID-${doc.id.toUpperCase()}</p>
+    <p><strong>Identifiant :</strong> BL-VID-${doc.id.toUpperCase()}</p>
   </div>
 </body>
 </html>
@@ -419,7 +419,7 @@ export async function downloadMediaFile(
     }
 
     const { uri: generatedUri } = await Print.printToFileAsync({ html });
-    const rawName = (doc.name || 'media_kwabo')
+    const rawName = (doc.name || 'media_benilink')
       .replace(/[^a-zA-Z0-9_\-\.]/g, '_')
       .toLowerCase();
     const finalFilename = rawName.endsWith('.pdf') ? rawName : `${rawName}.pdf`;

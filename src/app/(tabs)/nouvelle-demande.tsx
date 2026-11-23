@@ -62,8 +62,10 @@ export default function NouvelleDemandeScreen() {
       name.includes('phone') ||
       name.includes('telephone') ||
       name.includes('tel') ||
+      name.includes('contact') ||
       label.includes('téléphone') ||
-      label.includes('telephone')
+      label.includes('telephone') ||
+      label.includes('contact')
     );
   };
 
@@ -133,6 +135,37 @@ export default function NouvelleDemandeScreen() {
     return (
       <SafeAreaView style={styles.safeContainer} edges={['top']}>
         <Header title="Demande envoyée" />
+
+        {/* STEPPER HORIZONTAL - TOUTES ÉTAPES VALIDÉES */}
+        <View style={styles.wizardContainer}>
+          <View style={styles.wizardStep}>
+            <View style={[styles.wizardDot, styles.wizardDotDone]}>
+              <Ionicons name="checkmark" size={13} color="#FFFFFF" />
+            </View>
+            <Text style={[styles.wizardLabel, styles.wizardLabelCurrent]} numberOfLines={1}>
+              Choix du service
+            </Text>
+          </View>
+          <View style={styles.wizardDivider} />
+          <View style={styles.wizardStep}>
+            <View style={[styles.wizardDot, styles.wizardDotDone]}>
+              <Ionicons name="checkmark" size={13} color="#FFFFFF" />
+            </View>
+            <Text style={[styles.wizardLabel, styles.wizardLabelCurrent]} numberOfLines={1}>
+              Votre besoin
+            </Text>
+          </View>
+          <View style={styles.wizardDivider} />
+          <View style={styles.wizardStep}>
+            <View style={[styles.wizardDot, styles.wizardDotCurrent]}>
+              <Ionicons name="checkmark" size={13} color="#FFFFFF" />
+            </View>
+            <Text style={[styles.wizardLabel, styles.wizardLabelCurrent]} numberOfLines={1}>
+              Confirmation
+            </Text>
+          </View>
+        </View>
+
         <View style={styles.successWrapper}>
           <View style={styles.successIconCircle}>
             <Ionicons name="checkmark-done" size={48} color={COLORS.green} />
@@ -178,6 +211,44 @@ export default function NouvelleDemandeScreen() {
         showBack={!!selectedService}
         onBack={() => setSelectedService(null)}
       />
+
+      {/* BANDEAU STEPPER 1 - 2 - 3 STRICTEMENT HORIZONTAL SANS RETOUR À LA LIGNE */}
+      <View style={styles.wizardContainer}>
+        <View style={styles.wizardStep}>
+          <View style={[styles.wizardDot, selectedService ? styles.wizardDotDone : styles.wizardDotCurrent]}>
+            {selectedService ? (
+              <Ionicons name="checkmark" size={13} color="#FFFFFF" />
+            ) : (
+              <Text style={styles.wizardDotTextCurrent}>1</Text>
+            )}
+          </View>
+          <Text style={[styles.wizardLabel, !selectedService && styles.wizardLabelCurrent]} numberOfLines={1}>
+            Choix du service
+          </Text>
+        </View>
+
+        <View style={styles.wizardDivider} />
+
+        <View style={styles.wizardStep}>
+          <View style={[styles.wizardDot, selectedService ? styles.wizardDotCurrent : styles.wizardDotInactive]}>
+            <Text style={[styles.wizardDotText, selectedService && styles.wizardDotTextCurrent]}>2</Text>
+          </View>
+          <Text style={[styles.wizardLabel, selectedService && styles.wizardLabelCurrent]} numberOfLines={1}>
+            Votre besoin
+          </Text>
+        </View>
+
+        <View style={styles.wizardDivider} />
+
+        <View style={styles.wizardStep}>
+          <View style={[styles.wizardDot, styles.wizardDotInactive]}>
+            <Text style={styles.wizardDotText}>3</Text>
+          </View>
+          <Text style={styles.wizardLabel} numberOfLines={1}>
+            Confirmation
+          </Text>
+        </View>
+      </View>
 
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
@@ -378,6 +449,65 @@ const styles = StyleSheet.create({
   safeContainer: {
     flex: 1,
     backgroundColor: COLORS.cream,
+  },
+  wizardContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    backgroundColor: '#FFFFFF',
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: COLORS.border,
+  },
+  wizardStep: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    flexShrink: 1,
+  },
+  wizardDot: {
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: COLORS.neutralPale,
+  },
+  wizardDotCurrent: {
+    backgroundColor: COLORS.goldLight,
+  },
+  wizardDotDone: {
+    backgroundColor: COLORS.primary,
+  },
+  wizardDotInactive: {
+    backgroundColor: COLORS.neutralPale,
+  },
+  wizardDotText: {
+    fontSize: 12,
+    fontWeight: '700',
+    color: COLORS.muted,
+  },
+  wizardDotTextCurrent: {
+    fontSize: 12,
+    fontWeight: '800',
+    color: COLORS.text,
+  },
+  wizardLabel: {
+    fontSize: 12,
+    fontWeight: '500',
+    color: COLORS.muted,
+    flexShrink: 1,
+  },
+  wizardLabelCurrent: {
+    color: COLORS.text,
+    fontWeight: '700',
+  },
+  wizardDivider: {
+    height: 1,
+    width: 14,
+    backgroundColor: COLORS.border,
+    marginHorizontal: 2,
   },
   scrollContent: {
     paddingBottom: 110,

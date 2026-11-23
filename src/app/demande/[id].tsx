@@ -157,7 +157,7 @@ export default function DemandeDetailScreen() {
           <View style={styles.quoteCard}>
             <View style={styles.quoteTop}>
               <View>
-                <Text style={styles.quoteLabel}>Devis officiel KWABO</Text>
+                <Text style={styles.quoteLabel}>Devis officiel BeniLink</Text>
                 <Text style={styles.quoteName}>{request.quote.label}</Text>
               </View>
               <Text style={styles.quotePrice}>{request.quote.amount} €</Text>
@@ -183,7 +183,7 @@ export default function DemandeDetailScreen() {
             <Ionicons name="person" size={24} color={COLORS.greenDark} />
           </View>
           <View style={styles.operatorInfo}>
-            <Text style={styles.operatorRole}>Chargé de mission KWABO</Text>
+            <Text style={styles.operatorRole}>Chargé de mission BeniLink</Text>
             <Text style={styles.operatorName}>Maxime Dossou</Text>
             <Text style={styles.operatorPlace}>Basé à Cotonou, Bénin</Text>
           </View>
