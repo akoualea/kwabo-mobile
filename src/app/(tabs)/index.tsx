@@ -67,7 +67,16 @@ export default function HomeScreen() {
                 </View>
               </TouchableOpacity>
 
-              <NotificationBell />
+              <View style={styles.heroRight}>
+                <View style={styles.heroLogoCard}>
+                  <Image
+                    source={require('../../../assets/logo.png')}
+                    style={styles.heroLogoImg}
+                    resizeMode="contain"
+                  />
+                </View>
+                <NotificationBell />
+              </View>
             </View>
 
             {/* BARRE DE RECHERCHE TACTILE : QUE CHERCHEZ-VOUS ? */}
@@ -396,6 +405,26 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     marginBottom: 16,
+  },
+  heroRight: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+  },
+  heroLogoCard: {
+    backgroundColor: '#FFFFFF',
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 8,
+    shadowColor: '#000000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.15,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  heroLogoImg: {
+    width: 86,
+    height: 26,
   },
   heroUser: {
     flexDirection: 'row',

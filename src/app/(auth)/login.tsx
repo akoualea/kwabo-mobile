@@ -58,13 +58,12 @@ export default function LoginScreen() {
             <View style={styles.bgOverlay} />
 
             <SafeAreaView edges={['top']} style={styles.safeTopContent}>
-              <View style={styles.logoRow}>
-                <View style={styles.logoBadge}>
-                  <Text style={styles.logoBadgeText}>B</Text>
-                </View>
-                <Text style={styles.logoTitle}>
-                  BENILINK<Text style={styles.logoDot}>.</Text>
-                </Text>
+              <View style={styles.logoCard}>
+                <Image
+                  source={require('../../../assets/logo.png')}
+                  style={styles.logoBrandImg}
+                  resizeMode="contain"
+                />
               </View>
               <Text style={styles.tagline}>
                 Votre présence de confiance au Bénin
@@ -186,44 +185,37 @@ const styles = StyleSheet.create({
   },
   bgOverlay: {
     ...StyleSheet.absoluteFill,
-    backgroundColor: 'rgba(8, 77, 130, 0.22)', // Léger filtre azur pour garder le contraste sans obscurcir la photo
+    backgroundColor: 'rgba(6, 32, 60, 0.65)', // Contraste pour lisibilité parfaite
   },
   safeTopContent: {
     paddingHorizontal: 20,
     paddingTop: 16,
     paddingBottom: 24,
   },
-  logoRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
+  logoCard: {
+    backgroundColor: '#FFFFFF',
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 12,
+    alignSelf: 'flex-start',
+    shadowColor: '#000000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.15,
+    shadowRadius: 6,
+    elevation: 4,
   },
-  logoBadge: {
-    width: 34,
-    height: 34,
-    borderRadius: 9,
-    backgroundColor: COLORS.goldLight,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  logoBadgeText: {
-    fontSize: 20,
-    fontWeight: '900',
-    color: COLORS.greenDark,
-  },
-  logoTitle: {
-    fontSize: 24,
-    fontWeight: '800',
-    color: '#FFFFFF',
-    letterSpacing: 1,
-  },
-  logoDot: {
-    color: COLORS.goldLight,
+  logoBrandImg: {
+    width: 130,
+    height: 38,
   },
   tagline: {
-    color: '#DCEBE2',
+    color: '#FFFFFF',
     fontSize: 13,
-    marginTop: 6,
+    marginTop: 8,
+    fontWeight: '500',
+    textShadowColor: 'rgba(0, 0, 0, 0.6)',
+    textShadowOffset: { width: 0, height: 1 },
+    textShadowRadius: 3,
   },
   authCard: {
     flex: 1,

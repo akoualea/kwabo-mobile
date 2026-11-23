@@ -94,13 +94,25 @@ export default function RegisterScreen() {
             <View style={styles.headerBgOverlay} />
 
             <SafeAreaView edges={['top']} style={styles.headerSafeContent}>
-              <TouchableOpacity
-                onPress={() => router.back()}
-                style={styles.backBtn}
-                hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
-              >
-                <Ionicons name="arrow-back" size={24} color="#FFFFFF" />
-              </TouchableOpacity>
+              <View style={styles.headerTopBar}>
+                <TouchableOpacity
+                  onPress={() => router.back()}
+                  style={styles.backBtn}
+                  hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+                >
+                  <Ionicons name="arrow-back" size={22} color="#FFFFFF" />
+                </TouchableOpacity>
+
+                {/* LOGO EXACT OFFICIEL BENILINK */}
+                <View style={styles.headerLogoCard}>
+                  <Image
+                    source={require('../../../assets/logo.png')}
+                    style={styles.headerLogoImg}
+                    resizeMode="contain"
+                  />
+                </View>
+              </View>
+
               <Text style={styles.headerTitle}>Créer un compte</Text>
               <Text style={styles.headerSubtitle}>
                 Rejoignez les membres de la diaspora qui font confiance à BeniLink.
@@ -419,31 +431,58 @@ const styles = StyleSheet.create({
   },
   headerBgOverlay: {
     ...StyleSheet.absoluteFill,
-    backgroundColor: 'rgba(8, 77, 130, 0.22)',
+    backgroundColor: 'rgba(6, 32, 60, 0.68)', // Filtre azur sombre garantissant une lisibilité 100% nette
   },
   headerSafeContent: {
     paddingHorizontal: SPACING.xl,
     paddingTop: SPACING.md,
     paddingBottom: SPACING.lg,
   },
+  headerTopBar: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: SPACING.sm,
+  },
+  headerLogoCard: {
+    backgroundColor: '#FFFFFF',
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderRadius: 10,
+    shadowColor: '#000000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  headerLogoImg: {
+    width: 105,
+    height: 32,
+  },
   backBtn: {
     width: 38,
     height: 38,
     borderRadius: 19,
-    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+    backgroundColor: 'rgba(0, 0, 0, 0.45)',
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: SPACING.sm,
   },
   headerTitle: {
     fontSize: 24,
     fontWeight: '800',
     color: '#FFFFFF',
+    textShadowColor: 'rgba(0, 0, 0, 0.8)',
+    textShadowOffset: { width: 0, height: 1 },
+    textShadowRadius: 6,
   },
   headerSubtitle: {
     fontSize: 13,
-    color: '#DCEBE2',
+    color: '#FFFFFF',
     marginTop: 4,
+    fontWeight: '600',
+    textShadowColor: 'rgba(0, 0, 0, 0.8)',
+    textShadowOffset: { width: 0, height: 1 },
+    textShadowRadius: 4,
   },
   card: {
     flex: 1,

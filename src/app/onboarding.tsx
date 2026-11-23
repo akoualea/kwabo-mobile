@@ -63,14 +63,13 @@ export default function OnboardingScreen() {
         />
 
         <SafeAreaView edges={['top']} style={styles.topSafeArea}>
-          {/* Logo BeniLink discret en haut à gauche */}
-          <View style={styles.logoRow}>
-            <View style={styles.logoCircle}>
-              <Text style={styles.logoCircleText}>B</Text>
-            </View>
-            <Text style={styles.logoText}>
-              BENILINK<Text style={styles.logoDot}>.</Text>
-            </Text>
+          {/* Logo BeniLink officiel en haut à gauche */}
+          <View style={styles.logoCard}>
+            <Image
+              source={require('../../assets/logo.png')}
+              style={styles.logoImg}
+              resizeMode="contain"
+            />
           </View>
         </SafeAreaView>
       </View>
@@ -155,34 +154,21 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingTop: 12,
   },
-  logoRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
+  logoCard: {
+    backgroundColor: '#FFFFFF',
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderRadius: RADIUS.md,
     alignSelf: 'flex-start',
-    backgroundColor: 'rgba(0, 0, 0, 0.45)',
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: RADIUS.pill,
+    shadowColor: '#000000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 6,
+    elevation: 4,
   },
-  logoCircle: {
-    width: 28,
-    height: 28,
-    borderRadius: 7,
-    backgroundColor: COLORS.goldLight,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  logoCircleText: {
-    fontSize: 16,
-    fontWeight: '900',
-    color: COLORS.greenDark,
-  },
-  logoText: {
-    fontSize: 20,
-    fontWeight: '800',
-    color: '#FFFFFF',
-    letterSpacing: 1,
+  logoImg: {
+    width: 110,
+    height: 32,
   },
   logoDot: {
     color: COLORS.goldLight,
